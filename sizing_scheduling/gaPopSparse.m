@@ -1,0 +1,6 @@
+function [sparseGene, step] = gaPopSparse(gene, minBound, maxBound)
+step = (gene > 5000) * 50 + (gene > 1000) * 30 ...
+    + (gene > 500) * 10 + (gene > 200) * 5 ...
+    + (gene > 50) * 4 + 1;
+sparseGene = min(max(round(gene ./ step) .* step, minBound), maxBound);
+end
