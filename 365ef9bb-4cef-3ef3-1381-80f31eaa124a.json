@@ -1,0 +1,367 @@
+{
+ "projectName": "Example Project_District Cooling",
+ "enabled": true,
+ "address": "Fannin St",
+ "city": "Houston",
+ "state": "TX",
+ "latitude": 29.75706,
+ "longitude": -95.36358,
+ "firstYear": 2025,
+ "systemType": "District Cooling",
+ "selectedTechnologies": [
+  "Natural Gas-Fired Absorption Chiller",
+  "Electric Air-Cooled Chiller"
+ ],
+ "selectedTechnologySizes": [
+  {
+   "technologyName": "Natural Gas-Fired Absorption Chiller",
+   "selectedSize": 0
+  },
+  {
+   "technologyName": "Electric Air-Cooled Chiller",
+   "selectedSize": 0
+  }
+ ],
+ "lifespan": 50,
+ "paybackGoal": 10,
+ "iir_goal": 10,
+ "maximumDownPayment": 3000000,
+ "interestRate": 6,
+ "interestRateLoan": 4,
+ "environmentalGoal": "No environmental goals",
+ "carbonGoal": 30,
+ "resilienceGoalTime": 0,
+ "resilienceGoalLoad": 30,
+ "hydrogenPrice": 0,
+ "naturalGasPrice": 0,
+ "naturalGasPriceEscalation": 0.5,
+ "naturalGasDeterminationMethod": "Natural",
+ "electricityPrice": 0,
+ "electricityPriceEscalation": 0.5,
+ "electricityDeterminationMethod": "Natural",
+ "dieselPrice": 0,
+ "dieselPriceEscalation": 0.5,
+ "dieselDeterminationMethod": "Natural",
+ "installationCostEscalation": 0.5,
+ "installationCostDeterminationMethod": "Triangular",
+ "omPriceEscalation": 0.5,
+ "omDeterminationMethod": "Triangular",
+ "salvageEscalation": 0.5,
+ "salvageDeterminationMethod": "Triangular",
+ "buildings": [
+  {
+   "id": "42986",
+   "isNewBuilding": false,
+   "estimatedFloorCount": 48,
+   "latitude": 29.7561,
+   "longitude": -95.3624,
+   "usableSolar": 1979.0603,
+   "electricityProduction": 255,
+   "area": 1180663.5,
+   "yearBuilt": 2000,
+   "boilerEfficiency": 0.9,
+   "chillerEfficiency": 2.7,
+   "newBuildingRotation": 0,
+   "electricityCost": 0,
+   "fuelCost": 0,
+   "includeSolar": false,
+   "buildingType": "Large Office",
+   "polygon": {
+    "type": "Feature",
+    "properties": {
+     "id": "42986"
+    },
+    "geometry": {
+     "type": "Polygon",
+     "coordinates": [
+      [
+       [
+        -95.36253,
+        29.756393
+       ],
+       [
+        -95.36203,
+        29.756094
+       ],
+       [
+        -95.36227,
+        29.755806
+       ],
+       [
+        -95.36272,
+        29.756079
+       ],
+       [
+        -95.36276,
+        29.756107
+       ],
+       [
+        -95.36253,
+        29.756393
+       ]
+      ]
+     ]
+    }
+   },
+   "footprintArea": 24597.16,
+   "userSuppliedBoilerEfficiency": 0,
+   "userSuppliedChillerEfficiency": 0,
+   "userSuppliedPowerDemandData": [],
+   "userSuppliedFuelDemandData": []
+  },
+  {
+   "id": "23017",
+   "isNewBuilding": false,
+   "estimatedFloorCount": 46,
+   "latitude": 29.757807,
+   "longitude": -95.3636,
+   "usableSolar": 2928.2585,
+   "electricityProduction": 378,
+   "area": 2232996,
+   "yearBuilt": 2000,
+   "boilerEfficiency": 0.9,
+   "chillerEfficiency": 2.7,
+   "newBuildingRotation": 0,
+   "electricityCost": 0,
+   "fuelCost": 0,
+   "includeSolar": false,
+   "buildingType": "Hospital",
+   "polygon": {
+    "type": "Feature",
+    "properties": {
+     "id": "23017"
+    },
+    "geometry": {
+     "type": "Polygon",
+     "coordinates": [
+      [
+       [
+        -95.36366,
+        29.758247
+       ],
+       [
+        -95.36306,
+        29.757883
+       ],
+       [
+        -95.36333,
+        29.757555
+       ],
+       [
+        -95.36333,
+        29.757555
+       ],
+       [
+        -95.36338,
+        29.75759
+       ],
+       [
+        -95.363365,
+        29.757605
+       ],
+       [
+        -95.363556,
+        29.757715
+       ],
+       [
+        -95.36356,
+        29.7577
+       ],
+       [
+        -95.36356,
+        29.757698
+       ],
+       [
+        -95.36362,
+        29.757729
+       ],
+       [
+        -95.363686,
+        29.757645
+       ],
+       [
+        -95.363785,
+        29.757513
+       ],
+       [
+        -95.364136,
+        29.757729
+       ],
+       [
+        -95.363716,
+        29.758255
+       ],
+       [
+        -95.36367,
+        29.75823
+       ],
+       [
+        -95.36366,
+        29.758247
+       ]
+      ]
+     ]
+    }
+   },
+   "footprintArea": 48543.39,
+   "userSuppliedBoilerEfficiency": 0,
+   "userSuppliedChillerEfficiency": 0,
+   "userSuppliedPowerDemandData": [],
+   "userSuppliedFuelDemandData": []
+  }
+ ],
+ "pathConnections": [
+  {
+   "id": "42986_23017",
+   "building1_id": "23017",
+   "building2_id": "42986",
+   "distanceInMeters": 222.39,
+   "pipeSize": 0,
+   "feature": {
+    "type": "Feature",
+    "properties": {
+     "id": "42986_23017"
+    },
+    "geometry": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -95.3636,
+       29.757807
+      ],
+      [
+       -95.3624,
+       29.7561
+      ]
+     ]
+    }
+   },
+   "selected": false,
+   "cableType": 1
+  },
+  {
+   "id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af_42986",
+   "building1_id": "42986",
+   "building2_id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af",
+   "distanceInMeters": 89.04,
+   "pipeSize": 0,
+   "feature": {
+    "type": "Feature",
+    "properties": {
+     "id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af_42986"
+    },
+    "geometry": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -95.3624,
+       29.7561
+      ],
+      [
+       -95.36195,
+       29.756802
+      ]
+     ]
+    }
+   },
+   "selected": false,
+   "cableType": 1
+  },
+  {
+   "id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af_23017",
+   "building1_id": "23017",
+   "building2_id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af",
+   "distanceInMeters": 194.16,
+   "pipeSize": 0,
+   "feature": {
+    "type": "Feature",
+    "properties": {
+     "id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af_23017"
+    },
+    "geometry": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -95.3636,
+       29.757807
+      ],
+      [
+       -95.36195,
+       29.756802
+      ]
+     ]
+    }
+   },
+   "selected": false,
+   "cableType": 1
+  }
+ ],
+ "components": [
+  {
+   "id": "CP-8252e7fd-3ab3-3d93-fcae-7d7ec3e273af",
+   "systemType": "Central Plant",
+   "width": 76,
+   "length": 76,
+   "height": 30,
+   "latitude": 29.756802,
+   "longitude": -95.36195,
+   "coordinates": [
+    [
+     -95.36233967122598,
+     29.75715196487372
+    ],
+    [
+     -95.3615703382093,
+     29.75715196487372
+    ],
+    [
+     -95.3615703382093,
+     29.75645262445383
+    ],
+    [
+     -95.36233967122598,
+     29.75645262445383
+    ],
+    [
+     -95.36233967122598,
+     29.75715196487372
+    ]
+   ],
+   "rotatedCoordinates": [
+    [
+     -95.36233967122598,
+     29.75715196487372
+    ],
+    [
+     -95.3615703382093,
+     29.75715196487372
+    ],
+    [
+     -95.3615703382093,
+     29.75645262445383
+    ],
+    [
+     -95.36233967122598,
+     29.75645262445383
+    ],
+    [
+     -95.36233967122598,
+     29.75715196487372
+    ]
+   ],
+   "rotation": 325,
+   "heightReference": 1,
+   "primaryComponent": true
+  }
+ ],
+ "solarProductionAreas": [],
+ "status": 1,
+ "created": "2025-01-03T17:09:51.7664443Z",
+ "modified": "2025-01-03T17:09:51.7664451Z",
+ "submitted": null,
+ "completed": null,
+ "reviewed": null,
+ "id": "365ef9bb-4cef-3ef3-1381-80f31eaa124a",
+ "userId": "tzhang@harcresearch.org",
+ "useCleanEnergy": false
+}

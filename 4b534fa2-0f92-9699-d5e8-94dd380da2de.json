@@ -1,0 +1,319 @@
+{
+ "projectName": "Example Project_District Heating",
+ "enabled": true,
+ "address": "Fannin St",
+ "city": "Houston",
+ "state": "TX",
+ "latitude": 29.75706,
+ "longitude": -95.36358,
+ "firstYear": 2025,
+ "systemType": "District Heating",
+ "selectedTechnologies": [
+  "Hydrogen-Fired Boiler",
+  "Natural Gas-Fueled CHP"
+ ],
+ "selectedTechnologySizes": [
+  {
+   "technologyName": "Hydrogen-Fired Boiler",
+   "selectedSize": 0
+  },
+  {
+   "technologyName": "Natural Gas-Fueled CHP",
+   "selectedSize": 0
+  }
+ ],
+ "lifespan": 50,
+ "paybackGoal": 10,
+ "iir_goal": 10,
+ "maximumDownPayment": 3000000,
+ "interestRate": 6,
+ "interestRateLoan": 4,
+ "environmentalGoal": "No environmental goals",
+ "carbonGoal": 30,
+ "resilienceGoalTime": 0,
+ "resilienceGoalLoad": 30,
+ "hydrogenPrice": 0,
+ "naturalGasPrice": 0,
+ "naturalGasPriceEscalation": 0.5,
+ "naturalGasDeterminationMethod": "Natural",
+ "electricityPrice": 0,
+ "electricityPriceEscalation": 0.5,
+ "electricityDeterminationMethod": "Natural",
+ "dieselPrice": 0,
+ "dieselPriceEscalation": 0.5,
+ "dieselDeterminationMethod": "Natural",
+ "installationCostEscalation": 0.5,
+ "installationCostDeterminationMethod": "Triangular",
+ "omPriceEscalation": 0.5,
+ "omDeterminationMethod": "Triangular",
+ "salvageEscalation": 0.5,
+ "salvageDeterminationMethod": "Triangular",
+ "buildings": [
+  {
+   "id": "23030",
+   "isNewBuilding": false,
+   "estimatedFloorCount": 50,
+   "latitude": 29.759151,
+   "longitude": -95.36767,
+   "usableSolar": 1647.6207,
+   "electricityProduction": 213,
+   "area": 1469847.1,
+   "yearBuilt": 2000,
+   "boilerEfficiency": 0.9,
+   "chillerEfficiency": 2.7,
+   "newBuildingRotation": 0,
+   "electricityCost": 0,
+   "fuelCost": 0,
+   "includeSolar": false,
+   "buildingType": "Large Office",
+   "polygon": {
+    "type": "Feature",
+    "properties": {
+     "id": "23030"
+    },
+    "geometry": {
+     "type": "Polygon",
+     "coordinates": [
+      [
+       [
+        -95.367676,
+        29.759495
+       ],
+       [
+        -95.3673,
+        29.75927
+       ],
+       [
+        -95.36767,
+        29.758808
+       ],
+       [
+        -95.36804,
+        29.759033
+       ],
+       [
+        -95.367676,
+        29.759495
+       ]
+      ]
+     ]
+    }
+   },
+   "footprintArea": 29396.94,
+   "userSuppliedBoilerEfficiency": 0,
+   "userSuppliedChillerEfficiency": 0,
+   "userSuppliedPowerDemandData": [],
+   "userSuppliedFuelDemandData": []
+  },
+  {
+   "id": "23177",
+   "isNewBuilding": false,
+   "estimatedFloorCount": 2,
+   "latitude": 29.758116,
+   "longitude": -95.365944,
+   "usableSolar": 4088.6418,
+   "electricityProduction": 527,
+   "area": 125081.03,
+   "yearBuilt": 2000,
+   "boilerEfficiency": 0.9,
+   "chillerEfficiency": 2.7,
+   "newBuildingRotation": 0,
+   "electricityCost": 0,
+   "fuelCost": 0,
+   "includeSolar": false,
+   "buildingType": "Large Hotel",
+   "polygon": {
+    "type": "Feature",
+    "properties": {
+     "id": "23177"
+    },
+    "geometry": {
+     "type": "Polygon",
+     "coordinates": [
+      [
+       [
+        -95.36604,
+        29.758595
+       ],
+       [
+        -95.365395,
+        29.75821
+       ],
+       [
+        -95.365845,
+        29.757637
+       ],
+       [
+        -95.36649,
+        29.758024
+       ],
+       [
+        -95.36604,
+        29.758595
+       ]
+      ]
+     ]
+    }
+   },
+   "footprintArea": 62540.51,
+   "userSuppliedBoilerEfficiency": 0,
+   "userSuppliedChillerEfficiency": 0,
+   "userSuppliedPowerDemandData": [],
+   "userSuppliedFuelDemandData": []
+  }
+ ],
+ "pathConnections": [
+  {
+   "id": "23030_23177",
+   "building1_id": "23177",
+   "building2_id": "23030",
+   "distanceInMeters": 202.63,
+   "pipeSize": 0,
+   "feature": {
+    "type": "Feature",
+    "properties": {
+     "id": "23030_23177"
+    },
+    "geometry": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -95.365944,
+       29.758116
+      ],
+      [
+       -95.36767,
+       29.759151
+      ]
+     ]
+    }
+   },
+   "selected": false,
+   "cableType": 1
+  },
+  {
+   "id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff_23030",
+   "building1_id": "23030",
+   "building2_id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff",
+   "distanceInMeters": 90.12,
+   "pipeSize": 0,
+   "feature": {
+    "type": "Feature",
+    "properties": {
+     "id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff_23030"
+    },
+    "geometry": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -95.36767,
+       29.759151
+      ],
+      [
+       -95.36691,
+       29.758675
+      ]
+     ]
+    }
+   },
+   "selected": false,
+   "cableType": 1
+  },
+  {
+   "id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff_23177",
+   "building1_id": "23177",
+   "building2_id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff",
+   "distanceInMeters": 112.56,
+   "pipeSize": 0,
+   "feature": {
+    "type": "Feature",
+    "properties": {
+     "id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff_23177"
+    },
+    "geometry": {
+     "type": "LineString",
+     "coordinates": [
+      [
+       -95.365944,
+       29.758116
+      ],
+      [
+       -95.36691,
+       29.758675
+      ]
+     ]
+    }
+   },
+   "selected": false,
+   "cableType": 1
+  }
+ ],
+ "components": [
+  {
+   "id": "CP-cf780539-d34e-385d-c9b4-b17a6d976cff",
+   "systemType": "Central Plant",
+   "width": 43,
+   "length": 43,
+   "height": 30,
+   "latitude": 29.758675,
+   "longitude": -95.36691,
+   "coordinates": [
+    [
+     -95.36713342712352,
+     29.75887283040532
+    ],
+    [
+     -95.36669815972047,
+     29.75887283040532
+    ],
+    [
+     -95.36669815972047,
+     29.7584771353436
+    ],
+    [
+     -95.36713342712352,
+     29.7584771353436
+    ],
+    [
+     -95.36713342712352,
+     29.75887283040532
+    ]
+   ],
+   "rotatedCoordinates": [
+    [
+     -95.36713342712352,
+     29.75887283040532
+    ],
+    [
+     -95.36669815972047,
+     29.75887283040532
+    ],
+    [
+     -95.36669815972047,
+     29.7584771353436
+    ],
+    [
+     -95.36713342712352,
+     29.7584771353436
+    ],
+    [
+     -95.36713342712352,
+     29.75887283040532
+    ]
+   ],
+   "rotation": 325,
+   "heightReference": 1,
+   "primaryComponent": true
+  }
+ ],
+ "solarProductionAreas": [],
+ "status": 1,
+ "created": "2025-01-03T17:09:53.8851492Z",
+ "modified": "2025-01-03T17:09:53.8851492Z",
+ "submitted": null,
+ "completed": null,
+ "reviewed": null,
+ "id": "4b534fa2-0f92-9699-d5e8-94dd380da2de",
+ "userId": "tzhang@harcresearch.org",
+ "useCleanEnergy": false
+}
