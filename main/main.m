@@ -35,21 +35,6 @@ end
 log_level = lower(args.logLevel);
 
 log_function(sprintf("Computation Engine Version %i.%i.%i", engineVersion), 'info');
-switch lower(args.devMode)
-    case 'false'
-        web_host = convertStringsToChars(strcat('http://',args.host,':',args.port));
-        log_function(sprintf("production mode, webhost is %s", web_host));
-    case {'dev', 'true'}
-        web_host = 'http://localhost:8888';
-        log_function(sprintf("develop mode, webhost is %s", web_host), 'info');
-    case 'local'
-        web_host = '';
-        log_function("local mode", 'info');
-%        profile on;
-    otherwise
-        log_function("unknown devMode", 'error');
-        quit(249)
-end
 
 skipMode = lower(args.skipMode);
 
@@ -77,23 +62,9 @@ currentFolder=pwd;
 slach='/';
 
 %% fetch json file
-if startsWith(web_host, 'http', 'IgnoreCase', true)
-    r = RequestMessage('get');
-    uri = URI([web_host, '/api/v1/local/task/', task_id]);
-    resp = send(r,uri);
-    if resp.StatusCode ~= 200
-        log_function(sprintf("GET json status: %s", string(resp.StatusLine)), 'error');
-        quit(249)
-    else
-        log_function(sprintf("GET json status: %s", string(resp.StatusLine)), 'debug');
-    end
-    inputJSON = resp.Body.Data;
-    log_function("Json file is fetched from server");
-else
     jsonText = fileread(strcat(currentFolder,slach,'userInput',slach,task_id,'.json'));
     inputJSON = jsondecode(jsonText);
     log_function("Json file is fetched locally");
-end
 
 currentStepTime = toc-lastStepTime;
 lastStepTime = lastStepTime + currentStepTime;
@@ -191,30 +162,12 @@ else
     output_Data.customizedSolution = string(nan);
 end
 
-%% Send output json to server
-if startsWith(web_host, 'http', 'IgnoreCase', true)
-    
-    type = matlab.net.http.MediaType('application/json');
-    acceptField = matlab.net.http.field.AcceptField(type);
-    contentTypeField = matlab.net.http.field.ContentTypeField(type);%'application/json');
-    header = [acceptField contentTypeField];
-    request = RequestMessage('POST', header, matlab.net.http.MessageBody(output_Data));
-    response = request.send([web_host, '/api/v1/local/result/', task_id]);
-    if response.StatusCode ~= 200
-        log_function(sprintf("POST status: %s", string(response.StatusLine)), 'error');
-    else
-        log_function(sprintf("POST status: %s", string(response.StatusLine)), 'debug');
-    end
-    
-    currentStepTime = toc-lastStepTime;
-    log_function(sprintf("POST Json in %f seconds", currentStepTime), 'info');
-%% else
-    %%%% Write final json output to file
-    jsonText = jsonencode(output_Data, "PrettyPrint" , true);
-    fid = fopen(strcat(currentFolder,'/results_output/new_output.json'), 'w');
-    fprintf(fid, '%s', jsonText);
-    fclose(fid);
-end
+%% Write final json output to file
+jsonText = jsonencode(output_Data, "PrettyPrint" , true);
+fid = fopen(strcat(currentFolder,'/results_output/new_output.json'), 'w');
+fprintf(fid, '%s', jsonText);
+fclose(fid);
+
 
 currentStepTime = toc;
 log_function(sprintf("Computation finished in %f seconds", currentStepTime), 'info');

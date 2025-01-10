@@ -265,27 +265,9 @@ end
 
 %% Include substation to number of buses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 nbus = nbus + 1;
-if ~startsWith(web_host, 'http', 'IgnoreCase', true)
-    currentFolder=pwd;
-    slach='/';
-    %%%%%%%% Weather Data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    s4 = strcat(currentFolder,slach,'userInput',slach,'weatherData.csv');
-    weather_data = readtable(s4);
-    %%%%%%%% Technical Data %%%%%%%%
-    s5 = strcat(currentFolder,slach,'technical_data',slach,'technical_data.xlsx');
-    tech_data = readtable(s5);
-    %%%%%%%% Lines Data %%%%%%%
-    s6 = strcat(currentFolder,slach,'technical_data',slach,'line_data.csv');
-    lines_data = readtable(s6);
-    
-    %%%%%%%% Lines Data %%%%%%%
-    s3 = strcat(currentFolder,slach,'technical_data',slach,'pipeData.csv');
-    pipeData = readtable(s3,ReadRowNames=true);
-    %%%%%%%% Data genetic %%%%%%%
-    [data_genetic] = genetic_algorithm_data(slach);
-else
-    load technical_data
-end
+
+load technical_data
+
 
 %%%%
 financialGoals.lifespan = inputJSON.lifespan;
